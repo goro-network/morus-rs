@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+CPU_NAME=$(lscpu | grep 'Model name' | cut -f 2 -d ":" | awk '{$1=$1}1')
+
+echo -e "\n\033[34m* Generic CPU Features Benchmark instead of native ${CPU_NAME}...\033[0m"
+RUSTFLAGS="-C target-cpu=generic -C opt-level=3 -C codegen-units=1 -C link-args=-s" \
+    cargo bench -q 2>/dev/null | \
+    tail -n +6 -

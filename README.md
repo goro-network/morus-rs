@@ -7,7 +7,7 @@ MORUS is a fast authenticated cipher for platforms without hardware AES accelera
 
 It performs especially well on WebAssembly compared to alternatives.
 
-# Cargo flags
+## Cargo flags
 
 - `std`: allow dynamic allocations
 
@@ -20,9 +20,9 @@ export RUSTFLAGS="-C target-cpu=native"
 cargo bench
 ```
 
-# Benchmarks
+## Benchmarks
 
-Benchmarks take a 16384 bytes input block. Results are in bytes per second.
+Benchmarks take a 16 KiB input block. Results are in bytes per second.
 
 ## Rust implementations
 
